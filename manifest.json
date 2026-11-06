@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "GitLab Helper",
+  "version": "0.3.0",
+  "description": "Your GitLab merge requests, to-dos and issues at a glance, in the sidebar or toolbar.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "gitlab-helper@sortifal",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  },
+  "background": {
+    "scripts": ["src/api.js", "src/bookmarks.js", "src/background.js"]
+  },
+  "permissions": ["storage", "alarms", "notifications"],
+  "optional_permissions": ["bookmarks"],
+  "action": {
+    "default_title": "GitLab Helper",
+    "default_popup": "src/panel.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "sidebar_action": {
+    "default_title": "GitLab",
+    "default_panel": "src/panel.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    },
+    "open_at_install": false
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": { "default": "Alt+Shift+G" },
+      "description": "Toggle the GitLab sidebar"
+    }
+  }
+}

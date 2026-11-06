@@ -1,0 +1,15 @@
+{
+  "name": "gitlab-helper",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Firefox extension: GitLab MRs, to-dos and issues in the sidebar",
+  "scripts": {
+    "start": "web-ext run --source-dir . --start-url about:debugging#/runtime/this-firefox",
+    "lint": "web-ext lint --source-dir .",
+    "build": "web-ext build --source-dir . --overwrite-dest --ignore-files package.json README.md 'icons/icon.svg'",
+    "sign": "web-ext sign --source-dir . --channel unlisted"
+  },
+  "devDependencies": {
+    "web-ext": "^8.0.0"
+  }
+}
